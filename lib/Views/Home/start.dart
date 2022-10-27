@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vtaxi/Views/TimXe/timxe.dart';
 import 'package:vtaxi/constants/constantIcon.dart';
 
 class StartScreen extends StatelessWidget {
@@ -94,7 +95,13 @@ class StartScreen extends StatelessWidget {
               width: sizeScreen.width * 0.9,
               height: 45,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const TimXe()),
+                  );
+
+                },
                 child: Text("Tìm xe"),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
