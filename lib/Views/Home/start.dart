@@ -10,105 +10,113 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var sizeScreen = MediaQuery.of(context).size;
-    return Column(
+    return ListView(
       children: [
-        const SizedBox(
-          height: 90,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        Column(
           children: [
-            SvgPicture.asset(logoVTaxi),
+            const SizedBox(
+              height: 90,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SvgPicture.asset(logoVTaxi),
+              ],
+            ),
+            Text(
+              "Ứng dụng gọi xe công nghệ",
+              style:
+                  TextStyle(fontWeight: FontWeight.w700, fontSize: 14, height: 1.3),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            ListCarSelect(),
+            InputFrom(sizeScreen: sizeScreen),
+            InputTo(sizeScreen: sizeScreen),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 100,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Nhà",
+                      style: TextStyle(color: Color(0xFF282F39)),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Cơ quan",
+                      style: TextStyle(color: Color(0xFF282F39)),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1.1),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "+ Thêm",
+                      style: TextStyle(color: Color(0xFF282F39)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            Container(
+              width: sizeScreen.width * 0.9,
+              height: 45,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Tìm xe"),
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20))),
+              ),
+            ),
+            const SizedBox(height: 50,),
+            Container(
+              width: 232,
+              child: Text(
+                "Sản phẩm hợp tác giữa 3 bên \n" +
+                    "Công ty cổ phần dịch nền di động Việt Nam \n" +
+                    "Công ty cổ phần QR Vietnam \n" +
+                    "Hợp tác xã vận tải VTaxi",
+                style: TextStyle(
+                  fontSize: 12
+                ),
+                textAlign: TextAlign.center,
+              ),
+            )
           ],
         ),
-        Text(
-          "Ứng dụng gọi xe công nghệ",
-          style:
-              TextStyle(fontWeight: FontWeight.w700, fontSize: 14, height: 1.3),
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-        ListCarSelect(),
-        InputFrom(sizeScreen: sizeScreen),
-        InputTo(sizeScreen: sizeScreen),
-        const SizedBox(
-          height: 30,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              width: 100,
-              height: 45,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.1),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Nhà",
-                  style: TextStyle(color: Color(0xFF282F39)),
-                ),
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 45,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.1),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Cơ quan",
-                  style: TextStyle(color: Color(0xFF282F39)),
-                ),
-              ),
-            ),
-            Container(
-              width: 100,
-              height: 45,
-              decoration: BoxDecoration(
-                border: Border.all(width: 1.1),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "+ Thêm",
-                  style: TextStyle(color: Color(0xFF282F39)),
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 25,
-        ),
-        Container(
-          width: sizeScreen.width * 0.9,
-          height: 45,
-          child: ElevatedButton(
-            onPressed: () {},
-            child: Text("Tìm xe"),
-            style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20))),
-          ),
-        ),
-        Container(
-          width: 232,
-          child: Text(
-            "Sản phẩm hợp tác giữa 3 bên \n" +
-                "Công ty cổ phần dịch nền di động Việt Nam \n" +
-                "Công ty cổ phần QR Vietnam \n" +
-                "Hợp tác xã vận tải VTaxi",
-            textAlign: TextAlign.center,
-          ),
-        )
       ],
     );
   }
