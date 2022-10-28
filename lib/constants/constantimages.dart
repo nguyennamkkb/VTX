@@ -1,0 +1,1 @@
+const ImageMap1 = "assets/images/bando1.png";

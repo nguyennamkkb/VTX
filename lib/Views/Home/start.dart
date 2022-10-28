@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vtaxi/Views/Home/CarOption.dart';
 import 'package:vtaxi/Views/TimXe/timxe.dart';
 import 'package:vtaxi/constants/constantIcon.dart';
 
@@ -32,62 +33,62 @@ class StartScreen extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            ListCarSelect(),
+            // ListCarSelect(),
             InputFrom(sizeScreen: sizeScreen),
             InputTo(sizeScreen: sizeScreen),
-            const SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 100,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.1),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Nhà",
-                      style: TextStyle(color: Color(0xFF282F39)),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 100,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.1),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Cơ quan",
-                      style: TextStyle(color: Color(0xFF282F39)),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 100,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 1.1),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "+ Thêm",
-                      style: TextStyle(color: Color(0xFF282F39)),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            // const SizedBox(
+            //   height: 30,
+            // ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: [
+            //     Container(
+            //       width: 100,
+            //       height: 45,
+            //       decoration: BoxDecoration(
+            //         border: Border.all(width: 1.1),
+            //         borderRadius: BorderRadius.circular(30),
+            //       ),
+            //       child: TextButton(
+            //         onPressed: () {},
+            //         child: Text(
+            //           "Nhà",
+            //           style: TextStyle(color: Color(0xFF282F39)),
+            //         ),
+            //       ),
+            //     ),
+            //     Container(
+            //       width: 100,
+            //       height: 45,
+            //       decoration: BoxDecoration(
+            //         border: Border.all(width: 1.1),
+            //         borderRadius: BorderRadius.circular(30),
+            //       ),
+            //       child: TextButton(
+            //         onPressed: () {},
+            //         child: Text(
+            //           "Cơ quan",
+            //           style: TextStyle(color: Color(0xFF282F39)),
+            //         ),
+            //       ),
+            //     ),
+            //     Container(
+            //       width: 100,
+            //       height: 45,
+            //       decoration: BoxDecoration(
+            //         border: Border.all(width: 1.1),
+            //         borderRadius: BorderRadius.circular(30),
+            //       ),
+            //       child: TextButton(
+            //         onPressed: () {},
+            //         child: Text(
+            //           "+ Thêm",
+            //           style: TextStyle(color: Color(0xFF282F39)),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
             const SizedBox(
               height: 25,
             ),
@@ -221,19 +222,14 @@ class ListCarSelect extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
-          children: [SvgPicture.asset(iconTaxi), Text("Xe 4 chỗ")],
-        ),
-        Column(
-          children: [SvgPicture.asset(iconTaxi4), Text("Taxi")],
-        ),
-        Column(
-          children: [SvgPicture.asset(iconTaxi7), Text("Xe 7 chỗ")],
-        ),
-        Column(
-          children: [SvgPicture.asset(iconBike), Text("Xe máy")],
-        ),
+        CarOption(name: "Xe 4 chỗ",icon: iconTaxi4,),
+        CarOption(name: "Taxi",icon: iconTaxi,),
+        CarOption(name: "Xe 7 chỗ",icon: iconTaxi7,),
+        CarOption(name: "Xe máy",icon: iconBike,),
+
       ],
     );
   }
 }
+
+
